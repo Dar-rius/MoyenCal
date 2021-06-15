@@ -87,17 +87,20 @@ public class moyen {
         rire.setFont(police);
         rire.setBounds(180, 280 , 200, 50);
         panel1.add(rire);
-        //actions du bouton boutCal
+        // creation de l'actions du bouton boutCal
         boutCal.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+              //conversion des valeurs String (chaine de caractere) en int (valeur numerique) 
               int num1 = Integer.parseInt(eNote1.getText());  
               int num2 = Integer.parseInt(eNote2.getText());
               int num30 = (num1*30)/100;
               int num70 = (num2*70)/100;
               int num100 = num30+num70;
+              //conversion des valeurs int em String 
               note3.setText(Integer.toString(num100));
               note2.setText(Integer.toString(num70));
               note1.setText(Integer.toString(num30));
+              //condition pour lorsque la moyenne de 100% est inferieur a 10 
               if (num100 < 10){
                   rire.setText("Pauvre de toi");
               }
